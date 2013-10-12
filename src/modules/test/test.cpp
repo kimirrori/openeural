@@ -14,7 +14,7 @@
 class mytexttest: public CppUnit::TestCase {
 public:
 	void runTest() {
-		CPPUNIT_ASSERT_MESSAGE("String fail", 0);
+		CPPUNIT_ASSERT_MESSAGE("String fail", 1);
 	}
 };
 
