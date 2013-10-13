@@ -1,2 +1,2 @@
 export CXX = g++
-export CXXFLAGS =  -fPIC -xc++ -lcppunit  -O0 -g3 -Wall
+export CXXFLAGS = -xc++ -O0 -g3 -Wall

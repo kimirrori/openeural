@@ -9,20 +9,22 @@
 #include "cppunit/TestCase.h"
 #include "cppunit/ui/text/TextTestRunner.h"
 #include "cppunit/XmlOutputter.h"
-#include <ostream>
+#include <iostream>
 
 class mytexttest: public CppUnit::TestCase {
 public:
 	void runTest() {
-		CPPUNIT_ASSERT_MESSAGE("String fail", 1);
+		CPPUNIT_ASSERT_MESSAGE("String fail", 0);
 	}
 };
+
+using std::ofstream;
 
 int main() {
 	CppUnit::TextTestRunner runner;
 	runner.addTest(new mytexttest);
 	runner.run();
-	std::ofstream xmlFileOut("cpptestresults.xml");
+	ofstream xmlFileOut("cpptestresults.xml");
 	CppUnit::XmlOutputter xmlOut(&runner.result(), xmlFileOut);
 	xmlOut.write();
 	printf("hello world");

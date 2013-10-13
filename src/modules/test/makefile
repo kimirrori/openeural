@@ -1,4 +1,4 @@
 name = test
 PHONY: all
 all:
-	$(CXX) $(CXXFLAGS) -I$(include_path) -L$(lib_path) test.cpp -o $(bin_path)/$(name)
+	$(CXX) $(CXXFLAGS) $(name).cpp -I$(include_path) -o $(bin_path)/$(name) -lcppunit
