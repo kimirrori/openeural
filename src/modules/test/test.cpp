@@ -20,13 +20,26 @@ public:
 
 using std::ofstream;
 
-int main() {
+int Test_func(){
 	CppUnit::TextTestRunner runner;
 	runner.addTest(new mytexttest);
 	runner.run();
 	ofstream xmlFileOut("cpptestresults.xml");
 	CppUnit::XmlOutputter xmlOut(&runner.result(), xmlFileOut);
 	xmlOut.write();
+	for(int i=0;i<20000000;++i);
+	return 0;
+}
+
+int Void_func(){
+	return 0;
+}
+
+int main() {
+	Test_func();
+	for(int i=0;i<123;++i){
+		Void_func();
+	}
 	printf("hello world");
 	return 0;
 }

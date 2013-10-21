@@ -10,7 +10,8 @@ modules = test
 all: $(modules)
 
 $(modules):
+	-mkdir $(bin_path)
 	$(MAKE) -C $(modules_path)/$@
 
 clean:
-	rm -r $(bin_path)/*
+	rm -r $(bin_path)
